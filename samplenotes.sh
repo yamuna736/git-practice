@@ -1,7 +1,7 @@
 #!/bin/bash
 
-PERSON1 = A
-PERSON2 = B
+PERSON1=A
+PERSON2=B
 
 echo "${PERSON1}:: Hello ${PERSON2}, Are u learning shell script?"
 echo "${PERSON2}:: yes ${PERSON1}, started learning"
