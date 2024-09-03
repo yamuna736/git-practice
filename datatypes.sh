@@ -7,4 +7,4 @@ sum=$(($NUMBER1+$NUMBER2))
 subtract=$(($NUMBER1+$NUMBER2))
 
 echo "total is: $sum"
-echo "total is: $subtarct"
+echo "total is: $subtract"
