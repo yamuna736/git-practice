@@ -6,5 +6,5 @@ echo " to know the running script: $0"
 echo "to know the current directory: $PWD"
 echo "to know the current user: $HOME"
 echo "present PID: $$"
-sleep 100
+sleep 100 &
 echo "background pid: $!"
