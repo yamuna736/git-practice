@@ -5,15 +5,15 @@ USERID=$(id -u)
     #echo "user id is $USERID"
     R="\e[31m"
     G="\e[32m"
-    N="\e[33m"
+    N="\e[0m"
 
     VALIDATE(){
     if [ $1 -ne 0 ]
     then
-        echo -e "$2 is.. failed $R"
+        echo -e "$2 is.. failed $N"
         exit 1
     else 
-        echo "$2 is.. success $G"
+        echo -e "$2 is.. success $N"
 
 
     fi
