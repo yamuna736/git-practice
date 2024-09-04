@@ -8,6 +8,7 @@ USERID=$(id -u)
     
     then
         echo "command is.. failed"
+        exit 1
     else 
         echo "command is.. success"
 
