@@ -9,3 +9,5 @@ then
     echo "please access with root user"
 fi 
 
+dnf install git -y
+
