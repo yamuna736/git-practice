@@ -1,7 +1,7 @@
 #!/bin/bash
 
-USERNAME=$(id -u)
+USERID=$(id -u)
 
-echo "run the root user"
+echo "user id is $USERID"
 
 dnf install git -y
