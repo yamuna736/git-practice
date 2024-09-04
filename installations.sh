@@ -41,5 +41,5 @@ then
         echo "mysql already installed.."
     fi    
 else
-    echo "mysql is already install.."
+    echo "mysql is already install.. nothig to do"
 fi
