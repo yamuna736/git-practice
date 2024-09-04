@@ -43,7 +43,7 @@ then
     echo "mysql is not install.. try to install.."
     dnf install mysql -y
     VALIDATE $? "installing mysql"
-    fi    
+     
 else
     echo "mysql is already install.. nothig to do"
 fi
