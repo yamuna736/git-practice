@@ -13,7 +13,7 @@ USERID=$(id -u)
         echo -e "$2 is.. failed $N"
         exit 1
     else 
-        echo -e "$2 is.. success $N"
+        echo -e "$2 is.. success $G"
 
 
     fi
