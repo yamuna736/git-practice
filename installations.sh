@@ -6,7 +6,7 @@ USERID=$(id -u)
 
 if [ $USERID -ne 0 ]
 then  
-    echo "please access with root user"
+    echo "proceed with  root previliges"
 fi 
 
 dnf install git -y
