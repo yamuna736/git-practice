@@ -12,10 +12,14 @@
 # echo "the total sumof 2 number is : $subtract"
 
 
-if [ $NUMBER1 -gt 20 ]
-then 
-    echo " given number is: $NUMBER1 is greater than 20"
-    else
-        echo " given number is: $NUMBER1 is less than 20"
-fi
+# if [ $NUMBER1 -gt 20 ]
+# then 
+#     echo " given number is: $NUMBER1 is greater than 20"
+#     else
+#         echo " given number is: $NUMBER1 is less than 20"
+# fi
 
+for var in 0 1 2 3 4 5 6
+do  
+    echo " execute all the numbers $var"
+done
