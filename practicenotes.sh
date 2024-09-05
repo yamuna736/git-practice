@@ -12,7 +12,7 @@
 # echo "the total sumof 2 number is : $subtract"
 
 
-if [ $NUMBER1 -gt 20]
+if [ $NUMBER1 -gt 20 ]
 then 
     echo " given number is: $NUMBER1 is greater than 20"
     else
