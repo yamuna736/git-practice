@@ -25,7 +25,8 @@ fi
     fi
     }
 
-CHECK_ROOT()
+CHECK_ROOT
+
   for package in $@
    do 
        dnf list installed $package
@@ -33,7 +34,7 @@ if [ $? -ne 0 ]
 then
     echo " $package is not installed, trying to install it.."
     dnf install $package -y
-    
+
     VALIDATE $? "installing $package"
         exit 1
     
