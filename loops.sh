@@ -26,30 +26,23 @@ fi
     }
 
 CHECK_ROOT()
-
-
-    dnf list installed git
-
-    
+  for package in $@
+   do 
+       dnf list installed $package
 if [ $? -ne 0 ]
 then
-    echo " git is not installed, trying to install it.."
-    dnf install git -y
-    VALIDATE $? "installing git"
+    echo " $package is not installed, trying to install it.."
+    dnf install $package -y
+    
+    VALIDATE $? "installing $package"
         exit 1
     
 else
-    echo " git is already installed, nothing to do.."
+    echo " $package is already installed, nothing to do.."
 fi
 
-dnf list installed mysql
+    done
 
-if [ $? -ne 0 ]
-then 
-    echo "mysql is not install.. try to install.."
-    dnf install mysql -y
-    VALIDATE $? "installing mysql"
-     
-else
-    echo "mysql is already install.. nothig to do"
-fi
+    
+
+
