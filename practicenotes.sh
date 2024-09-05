@@ -1,4 +1,4 @@
 #!?bin/bash
 
 NAME=yamuna
-echo "$hello name"
+echo "hello, how are u? $NAME"
