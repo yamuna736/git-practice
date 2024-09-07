@@ -62,7 +62,7 @@ then
         exit 1
     
 else
-    echo -e " $G $package is already installed, nothing to do..$N " &>>$LOG_FILE
+    echo -e " $G $package is already installed, nothing to do..$N "  | tee -a $LOG_FILE
 fi
 
     done
