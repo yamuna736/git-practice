@@ -1,5 +1,5 @@
 #!/bin/bash
 
-NAME=yamuna
+USERNAME=$1
 
-echo "$NAME"
+echo "$USERNAME"
