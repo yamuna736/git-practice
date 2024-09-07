@@ -13,6 +13,7 @@ USERID=$(id -u)
     R="\e[31m"
     G="\e[32m"
     N="\e[0m"
+    Y="\e[33m"
     CHECK_ROOT(){
 if [ $USERID -ne 0 ]
 then  
@@ -32,11 +33,20 @@ fi
     fi
     }
 
+ USAGE(){
+
+        echo -e "$Y USAGE $N :: sudo sh redirectiors.sh pakage1 package2..."
+        exit 1
+ }
 CHECK_ROOT()
 
+if [$# -ne 0]
+then
+    USAGE
+fi
  for package in $@
    do 
-       dnf list installed $package
+       dnf list installed $package &>>$LOGS_FOLDER
 if [ $? -ne 0 ]
 then
     echo -e " $Y $package is not installed, trying to install it.. $N " &>>$LOGS_FOLDER
