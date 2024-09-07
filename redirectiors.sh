@@ -4,7 +4,7 @@ LOGS_FOLDER="var/logs/shell-script"
 SCRIPT_NAME=$(echo "0" | cut -d "." -f1)
 TIME_STAMP=$(date +%Y-%m-%d-%H-%M-%S)
 LOGS_FILE="$LOGS_FOLDER/$SCRIPT_NAME-$TIME_STAMP.log"
-mkdir -p $LOGS_FOLDER
+sudo mkdir -p $LOGS_FOLDER
 
 
 USERID=$(id -u)
