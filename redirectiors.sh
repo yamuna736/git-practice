@@ -35,7 +35,7 @@ fi
 
  USAGE(){
 
-        echo -e "$Y USAGE $N :: sudo sh redirectiors.sh pakage1 package2..."
+        echo -e "$G USAGE $N :: sudo sh redirectiors.sh pakage1 package2..."
         exit 1
  }
 CHECK_ROOT()
