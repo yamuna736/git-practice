@@ -38,7 +38,7 @@ fi
 
  USAGE(){
 
-        echo -e "$G USAGE :: 
+        echo -e "$G USAGE:: 
         $N  sudo sh redirectiors.sh package1 package2..."
         exit 1
  }
