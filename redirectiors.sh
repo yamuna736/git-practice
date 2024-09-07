@@ -44,7 +44,7 @@ fi
  }
 CHECK_ROOT
 
-if [$# -ne 0]
+if [ $# -ne 0 ]
 then
     USAGE
 fi
