@@ -48,19 +48,19 @@ if [ $# -ne 0 ]
 then
     USAGE
 fi
-#  for package in $@
-#    do 
-#        dnf list installed $package &>>$LOGS_FILE
-# if [ $? -ne 0 ]
-# then
-#     echo -e " $Y $package is not installed, trying to install it.. $N " &>>$LOGS_FILE
-#     dnf install $package -y &>>$LOGS_FILE
+ for package in $@
+   do 
+       dnf list installed $package &>>$LOGS_FILE
+if [ $? -ne 0 ]
+then
+    echo -e " $Y $package is not installed, trying to install it.. $N " &>>$LOGS_FILE
+    dnf install $package -y &>>$LOGS_FILE
 
-#     VALIDATE $? "installing $package"
-#         exit 1
+    VALIDATE $? "installing $package"
+        exit 1
     
-# else
-#     echo -e " $G $package is already installed, nothing to do..$N " &>>$LOGS_FILE
-# fi
+else
+    echo -e " $G $package is already installed, nothing to do..$N " &>>$LOGS_FILE
+fi
 
-#     done
+    done
