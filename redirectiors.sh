@@ -3,7 +3,7 @@
 LOGS_FOLDER=var/logs/shell-script
 SCRIPT_NAME=$(echo "0" | cut -d "." -f1)
 TIME_STAMP=$(date +%Y-%m-%d-%H-%M-%S)
-LOGS_FILE="$LOGS_FOLDER/$CRIPT_NAME-$TIME_STAMP"
+LOGS_FILE="$LOGS_FOLDER/$CRIPT_NAME-$TIME_STAMP.log"
 mkdir -p $LOGS_FOLDER
 
 
@@ -17,17 +17,17 @@ USERID=$(id -u)
     CHECK_ROOT(){
 if [ $USERID -ne 0 ]
 then  
-    echo -e " $R proceed with  root previliges $N " &>>$LOGS_FOLDER
+    echo -e " $R proceed with  root previliges $N " &>>$LOGS_FILE
     exit 1
 fi 
     }
     VALIDATE(){
     if [ $1 -ne 0 ]
     then
-        echo -e "$2 is.. $R failed $N" &>>$LOGS_FOLDER
+        echo -e "$2 is.. $R failed $N" &>>$LOGS_FILE
         exit 1
     else 
-        echo -e "$2 is.. $G success $N" &>>$LOGS_FOLDER
+        echo -e "$2 is.. $G success $N" &>>$LOGS_FILE
 
 
     fi
@@ -35,7 +35,8 @@ fi
 
  USAGE(){
 
-        echo -e "$G USAGE :: $N  sudo sh redirectiors.sh pakage1 package2..."
+        echo -e "$G USAGE :: 
+        $N  sudo sh redirectiors.sh pakage1 package2..."
         exit 1
  }
 CHECK_ROOT()
@@ -46,17 +47,17 @@ then
 fi
  for package in $@
    do 
-       dnf list installed $package &>>$LOGS_FOLDER
+       dnf list installed $package &>>$LOGS_FILE
 if [ $? -ne 0 ]
 then
-    echo -e " $Y $package is not installed, trying to install it.. $N " &>>$LOGS_FOLDER
+    echo -e " $Y $package is not installed, trying to install it.. $N " &>>$LOGS_FILE
     dnf install $package -y
 
     VALIDATE $? "installing $package"
         exit 1
     
 else
-    echo -e " $G $package is already installed, nothing to do..$N " &>>$LOGS_FOLDER
+    echo -e " $G $package is already installed, nothing to do..$N " &>>$LOGS_FILE
 fi
 
     done
