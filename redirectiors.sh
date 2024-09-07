@@ -20,17 +20,17 @@ USERID=$(id -u)
 
 if [ $USERID -ne 0 ]
 then  
-    echo -e "$R proceed with  root previliges $N" &>>$LOGS_FILE
+    echo -e "$R proceed with  root previliges $N" &>>$LOG_FILE
     exit 1
 fi 
     }
     VALIDATE(){
     if [ $1 -ne 0 ]
     then
-        echo -e "$2 is.. $R failed $N" &>>$LOGS_FILE
+        echo -e "$2 is.. $R failed $N" &>>$LOG_FILE
         exit 1
     else 
-        echo -e "$2 is.. $G success $N" &>>$LOGS_FILE
+        echo -e "$2 is.. $G success $N" &>>$LOG_FILE
 
 
     fi
@@ -50,11 +50,11 @@ then
 fi
  for package in $@
    do 
-       dnf list installed $package &>>$LOGS_FILE
+       dnf list installed $package &>>$LOG_FILE
 if [ $? -ne 0 ]
 then
     echo -e " $Y $package is not installed, trying to install it.. $N " &>>$LOGS_FILE
-    dnf install $package -y &>>$LOGS_FILE
+    dnf install $package -y &>>$LOG_FILE
 
     VALIDATE $? "installing $package"
         exit 1
